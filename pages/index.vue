@@ -2,6 +2,6 @@
 
 <template>
   <div>
-    <WordOfTheDay />
+    <CardList />
   </div>
 </template>

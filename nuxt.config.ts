@@ -6,11 +6,19 @@ export default defineNuxtConfig({
   primevue: {
     importPT: { as: "Tailwind", from: "primevue/passthrough/tailwind" },
     cssLayerOrder: "tailwind-base, primevue, tailwind-utilities",
-    usePrimeVue: false,
     components: {
       prefix: "Prime",
       include: "*",
     },
   },
-  css: ["primevue/resources/themes/aura-light-green/theme.css"],
+  css: [
+    "~/assets/css/main.css",
+    "primevue/resources/themes/aura-light-green/theme.css",
+  ],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 });

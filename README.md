@@ -1,3 +1,7 @@
+Need to solve
+
+1. Auto import all component with unpligin (doesn't work even though I added everything in vite.config)
+
 Ideas
 
 1. Connect calendar to choose TODAY or pick another day (today is the default)
@@ -30,3 +34,5 @@ Ideas
 28. Tailwind
 29. Colour mode
 30. Authentication
+31. Add multiple definitions
+32. Write examples
