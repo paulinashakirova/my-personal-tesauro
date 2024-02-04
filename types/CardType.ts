@@ -3,4 +3,5 @@ export interface CardType {
   name: string | null;
   pronunciation: string | null;
   definition: string | null;
+  dateAdded: Date | string;
 }

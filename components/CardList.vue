@@ -12,6 +12,7 @@ const store = useWordStore();
         :name="word.name"
         :pronunciation="word.pronunciation"
         :definition="word.definition"
+        :date-added="word.dateAdded"
       />
     </div>
   </div>
