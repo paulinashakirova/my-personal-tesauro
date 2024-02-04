@@ -39,3 +39,12 @@ Ideas
 33. Default placeholder image
 34. Welcome screen for new users (Add your first word)
     35.Show toast that word was created
+35. Use Storyblock
+36. Use GraphQL
+37. What if a person adds the same word many times.
+38. Logic how to delete a word. (if a person adds the same word - show a warning and suggest to instead add a definition or additional spelling)
+39. Edit button
+40. Tags
+41. Filter by
+42. Sort buy
+43.

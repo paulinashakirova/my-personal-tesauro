@@ -1,12 +1,15 @@
 <script setup lang="ts">
+import { useWordStore } from "@/stores/CardStore.js";
+import type { CardType } from "@/types/CardType";
+import Button from "primevue/button";
 import Card from "primevue/card";
 
-interface Props {
-  name: String;
-  pronunciation: String;
-  definition: String;
+const props = defineProps<CardType>();
+const store = useWordStore();
+
+function onClick() {
+  store.deleteWord(props.name);
 }
-const props = defineProps<Props>();
 </script>
 
 <template>
@@ -24,7 +27,12 @@ const props = defineProps<Props>();
     </template>
     <template #footer>
       <div class="flex gap-3 mt-1">
-        <!-- <Button label="Delete" severity="secondary" outlined class="w-full" /> -->
+        <Button
+          label="Delete"
+          severity="secondary"
+          class="w-full"
+          @click="onClick"
+        />
         <!-- <Button label="Add" class="w-full" /> -->
       </div>
     </template>

@@ -4,22 +4,29 @@ import Button from "primevue/button";
 import InputText from "primevue/inputtext";
 import Textarea from "primevue/textarea";
 import { ref } from "vue";
+
 const store = useWordStore();
 
 const word = ref({
+  id: 1,
   name: "",
   pronunciation: "",
   definition: "",
 });
 
 function addWord() {
+  incrementID();
   const send = {
+    id: word.value.id,
     name: word.value.name,
     pronunciation: word.value.pronunciation,
     definition: word.value.definition,
   };
   store.addWord(send);
   clearForm();
+}
+function incrementID() {
+  word.value.id++;
 }
 
 function clearForm() {
@@ -30,7 +37,7 @@ function clearForm() {
 </script>
 
 <template>
-  <div class="flex flex-col m-4 gap-y-4">
+  <div class="flex flex-col m-4 gap-y-4 border rounded-md p-8 w-[500px]">
     <p class="text-xl text-center font-bold">Add a new word</p>
     <div class="flex">
       <label class="w-48">Name</label>
@@ -44,9 +51,8 @@ function clearForm() {
       <label class="w-48">Definition</label>
       <Textarea class="w-full" autoResize v-model="word.definition" />
     </div>
-    <div class="flex ml-auto gap-4">
-      <Button label="Reset" class="w-24" />
-      <Button label="Add" class="w-24" @click="addWord" />
+    <div class="flex ml-auto">
+      <Button label="Add" class="px-10" @click="addWord" />
     </div>
   </div>
 </template>

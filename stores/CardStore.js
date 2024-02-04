@@ -2,7 +2,14 @@ import { defineStore } from "pinia";
 
 export const useWordStore = defineStore("WordStore", {
   state: () => ({
-    words: [{ name: "", pronunciation: "", definition: "" }],
+    words: [
+      {
+        id: 0,
+        name: "Here you can add a word's title",
+        pronunciation: "Here you can add a word's pronunciation",
+        definition: "Here you can add a word's definition",
+      },
+    ],
   }),
   persist: true,
   getters: {
@@ -13,6 +20,12 @@ export const useWordStore = defineStore("WordStore", {
   actions: {
     addWord(word) {
       this.words.push(word);
+    },
+    deleteWord(name) {
+      const indexOfwordToDelete = this.words.findIndex(
+        (word) => word.name === name
+      );
+      this.words.splice(indexOfwordToDelete, 1);
     },
   },
 });
