@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@pinia/nuxt", "nuxt-primevue"],
+  modules: [
+    "@pinia/nuxt",
+    "nuxt-primevue",
+    "@pinia-plugin-persistedstate/nuxt",
+  ],
   components: true,
   primevue: {
     importPT: { as: "Tailwind", from: "primevue/passthrough/tailwind" },
