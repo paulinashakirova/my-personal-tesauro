@@ -36,3 +36,5 @@ Ideas
 30. Authentication
 31. Add multiple definitions
 32. Write examples
+33. Default placeholder image
+    34.Show toast that word was created

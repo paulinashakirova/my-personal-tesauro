@@ -3,7 +3,7 @@ import { useWordStore } from "@/stores/CardStore.js";
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
 import Textarea from "primevue/textarea";
-import { ref, watch } from "vue";
+import { ref } from "vue";
 const store = useWordStore();
 
 const word = ref({
@@ -11,19 +11,21 @@ const word = ref({
   pronunciation: "",
   definition: "",
 });
-watch(
-  word,
-  () => {
-    console.log("word", word);
-  },
-  { deep: true }
-);
+
 function addWord() {
-  store.addWord(word.value);
-  //   word.value.name = "";
-  //   word.value.pronunciation = "";
-  //   word.value.definition = "";
-  console.log("clicked");
+  const send = {
+    name: word.value.name,
+    pronunciation: word.value.pronunciation,
+    definition: word.value.definition,
+  };
+  store.addWord(send);
+  clearForm();
+}
+
+function clearForm() {
+  word.value.name = "";
+  word.value.pronunciation = "";
+  word.value.definition = "";
 }
 </script>
 

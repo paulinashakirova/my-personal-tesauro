@@ -15,6 +15,7 @@ export const useWordStore = defineStore("WordStore", {
       },
     ],
   }),
+  persist: true,
   getters: {
     wordsCount(state) {
       return state.words.length;
