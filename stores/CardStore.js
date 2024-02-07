@@ -8,7 +8,6 @@ export const useWordStore = defineStore("WordStore", {
         name: "Here you can add a word's title",
         pronunciation: "Here you can add a word's pronunciation",
         definition: "Here you can add a word's definition",
-        dateAdded: "",
       },
     ],
   }),
