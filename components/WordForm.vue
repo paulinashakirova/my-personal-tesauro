@@ -5,6 +5,7 @@ import Button from "primevue/button";
 import Calendar from "primevue/calendar";
 import InputText from "primevue/inputtext";
 import Textarea from "primevue/textarea";
+import { v4 as uuidv4 } from "uuid";
 import { ref } from "vue";
 
 const store = useWordStore();
@@ -37,7 +38,7 @@ function formatDate() {
 }
 
 function incrementID() {
-  word.value.id++;
+  word.value.id = uuidv4();
 }
 
 function clearForm() {

@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { useWordStore } from "@/stores/CardStore.js";
-const store = useWordStore();
+const props = defineProps<{ wordsCurrentPage: any }>();
 </script>
 
 <template>
   <h1 class="text-center font-bold text-3xl">Word of the Day</h1>
   <div class="flex flex-wrap gap-8 m-8">
-    <div v-for="(word, index) in store.words" :key="word.id ? word.id : index">
+    <div v-for="word in props.wordsCurrentPage" :key="word.id">
       <CardComponent
         :id="word.id"
         :name="word.name"

@@ -1,5 +1,5 @@
 export interface CardType {
-  id: number | null;
+  id: string;
   name: string | null;
   pronunciation: string | null;
   definition: string | null;
