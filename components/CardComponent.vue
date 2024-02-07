@@ -7,7 +7,7 @@ import Card from "primevue/card";
 const props = defineProps<CardType>();
 const store = useWordStore();
 
-function onClick() {
+function onDelete() {
   store.deleteWord(props.name);
 }
 </script>
@@ -24,6 +24,7 @@ function onClick() {
     <template #subtitle>Pronunciation: {{ props.pronunciation }}</template>
     <template #content>
       <p class="m-0">Definition: {{ props.definition }}</p>
+      <p class="m-0">Added: {{ props.dateAdded }}</p>
     </template>
     <template #footer>
       <div class="flex gap-3 mt-1">
@@ -31,7 +32,7 @@ function onClick() {
           label="Delete"
           severity="secondary"
           class="w-full"
-          @click="onClick"
+          @click="onDelete"
         />
         <!-- <Button label="Add" class="w-full" /> -->
       </div>

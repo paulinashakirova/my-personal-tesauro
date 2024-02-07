@@ -4,16 +4,17 @@ export default defineNuxtConfig({
   modules: [
     "@pinia/nuxt",
     "nuxt-primevue",
+    "@vueuse/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
   ],
-  components: true,
+  // components: true,
   primevue: {
     importPT: { as: "Tailwind", from: "primevue/passthrough/tailwind" },
     cssLayerOrder: "tailwind-base, primevue, tailwind-utilities",
-    components: {
-      prefix: "Prime",
-      include: "*",
-    },
+    // components: {
+    //   prefix: "Prime",
+    //   include: "*",
+    // },
   },
   css: [
     "~/assets/css/main.css",
