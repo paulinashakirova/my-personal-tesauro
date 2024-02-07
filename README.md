@@ -47,7 +47,4 @@ Ideas
 40. Tags
 41. Filter by
 42. Sort buy
-43. Format date (done)
-44. Lazy loading of pages
-45. If a person doesn't add the date - default to today.
-46. Being able to change page and perpage from the router...
+43.
